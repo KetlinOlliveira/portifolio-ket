@@ -182,7 +182,7 @@ formulario.addEventListener('submit', async (e) => {
 
     try {
         //Apontando para o Back-end Java
-        const response = await fetch('http://localhost:8081/api/contato', {
+        const response = await fetch('https://portifolio-ket-production.up.railway.app/api/contato', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(dados)
