@@ -14,7 +14,7 @@ public class EmailService {
 
     public void enviarEmail(ContatoDTO dados) {
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("seu-portfolio@exemplo.com");
+        message.setFrom("KetlinOliveira20044@gmail.com");
         message.setTo("KetlinOliveira20044@gmail.com"); // Seu e-mail de destino 
         message.setSubject("Novo contacto de: " + dados.nome());
         message.setText("Mensagem: " + dados.mensagem() + "\n\nResponder para: " + dados.email());
