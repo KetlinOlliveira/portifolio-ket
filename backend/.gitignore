@@ -1,0 +1,17 @@
+# Maven
+target/
+*.jar
+*.war
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Variáveis sensíveis
+.env
+application-local.properties
+
+# OS
+.DS_Store
+Thumbs.db

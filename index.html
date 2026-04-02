@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifolio</title>
+
+    <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">&lt;keth<span>.dev&gt;</span></div>
+
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#experiencia">Experiência</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+        <button id="theme-toggle" title="Alternar tema">
+                <i class="fas fa-moon"></i> </button>
+          <a href="#contato"class= "btn-cta">Let's Work Together</a>
+    </nav>
+
+<section id="hero" class="section hero">
+    <div class="hero-left">
+        <div class="badge-tag">✦ Desenvolvimento com qualidade</div>
+
+        <h1 class="hero-title">Oi, eu sou <span class="highlight">Ketlin</span></h1>
+        <p class="hero-role">Desenvolvedora Full-Stack</p>
+        <p class="hero-desc">Criando experiências digitais cativantes, escaláveis e de alta qualidade
+    — com código limpo e atenção ao detalhe.</p>
+
+        <div class="hero-tags">
+            <span class="pill">Java</span>
+            <span class="pill">TypeScript</span>
+            <span class="pill">React</span>
+            <span class="pill">FullStack</span>
+        </div>
+
+        <div class="hero-btns">
+            <a href="#projetos" class="btn-primary">Ver Projetos</a>
+            <button class="btn-outline" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">
+            Vamos trabalhar juntos
+            </button>
+        </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="photo-wrap">
+        <div class="photo-ring">
+          <img src="assets/image/eu.jpg" alt="Ketlin">
+        </div>
+        <div class="available-badge">Disponível para projetos</div>
+      </div>
+    </div>
+</section>
+
+<section id="about" class="section">
+    <p class="section-tag">Conheça a desenvolvedora</p>
+    <h2 class="section-title">Sobre Mim</h2>
+
+    <div class="about-card">
+        <div class="about-content">
+            <h3>Olá, me chamo Ketlin Oliveira!</h3>
+            <p>
+                Sou estudante de Análise e Desenvolvimento de Sistemas no IFBA e atuo como Desenvolvedora Full Stack. 
+                Minha paixão é construir soluções completas: desde APIs REST escaláveis e bem estruturadas no back-end, até interfaces responsivas e painéis interativos no front-end.
+            </p>
+            <p>
+                Trabalho principalmente com o ecossistema <strong>Java e Spring Boot</strong>, aliado ao <strong>React e TypeScript</strong>. Adoro focar em uma arquitetura limpa e no uso de boas práticas para entregar sistemas que realmente resolvam problemas reais.
+            </p>
+
+            <div class="about-socials">
+                <a href="https://www.linkedin.com/in/ketlin-oliveiradev" target="_blank" class="social-btn">
+                    <i class="devicon-linkedin-plain"></i> LinkedIn
+                </a>
+                <a href="https://github.com/KetlinOlliveira" target="_blank" class="social-btn">
+                    <i class="devicon-github-original"></i> GitHub
+                </a>
+                <a href="https://www.instagram.com/00h36m" target="_blank" class="social-btn">
+                    <i>📷</i> Instagram
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="projetos" class="section">
+    <p class="section-tag">Meu trabalho</p>
+    <h2 class="section-title">Projetos</h2>
+
+    <div class="projects-grid">
+        
+        <div class="project-card fade-in visible" data-project="0">
+            <div class="project-thumb">
+                <img src="assets/projetos/projeto-service-1.png" alt="Projeto 1">
+                <div class="project-overlay">Ver mais →</div>
+            </div>
+            <div class="project-info">
+                <h3 class="project-name">MoreSale | DashBoard e WebService</h3>
+                <p class="project-desc">Projeto FullStack para gerenciamento de vendas e análise de dados.</p>
+                <div class="project-stack">
+                    <span class="stack-tag">Java</span>
+                    <span class="stack-tag">Springboot</span>
+                    <span class="stack-tag">PostgreSQL</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card fade-in visible" data-project="1">
+            <div class="project-thumb">
+                <img src="assets/projetos/projeto-wepet-2.png" alt="Projeto 2">
+                <div class="project-overlay">Ver mais →</div>
+            </div>
+            <div class="project-info">
+                <h3 class="project-name">Wepet | Landing Page</h3>
+                <p class="project-desc">Landing page para a empresa Wepet, com foco em divulgar seus serviços.</p>
+                <div class="project-stack">
+                    <span class="stack-tag">HTML</span>
+                    <span class="stack-tag">CSS</span>
+                    <span class="stack-tag">JavaScript</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card fade-in visible" data-project="2">
+            <div class="project-thumb">
+                <img src="assets/projetos/projeto-api-3.png" alt="Projeto 3">
+                <div class="project-overlay">Ver mais →</div>
+            </div>
+            <div class="project-info">
+                <h3 class="project-name">Cidades DashBoard</h3>
+                <p class="project-desc">Dashboard para visualização de dados de municípios da Bahia.</p>
+                <div class="project-stack">
+                    <span class="stack-tag">TypeScript</span>
+                    <span class="stack-tag">React</span>
+                    <span class="stack-tag">IBGE API</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card fade-in visible" data-project="3">
+            <div class="project-thumb">
+                <img src="assets/projetos/projeto-ctt-4.png" alt="Projeto 4">
+                <div class="project-overlay">Ver mais →</div>
+            </div>
+            <div class="project-info">
+                <h3 class="project-name">Contatos | Agenda</h3>
+                <p class="project-desc">Sistema de gerenciamento de contatos com funcionalidades de CRUD.</p>
+                <div class="project-stack">
+                    <span class="stack-tag">Typescript</span>
+                    <span class="stack-tag">Node.js</span>
+                    <span class="stack-tag">MongoDB</span>
+                </div>
+            </div>
+        </div>
+    </div> 
+</section>
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+        <button class="modal-close" id="modalClose">✕</button>
+        
+        <div class="modal-main-image">
+            <img src="" alt="Imagem Principal do Projeto" id="modalMainImg">
+        </div>
+
+        <div class="modal-thumbnails" id="modalThumbnails">
+            </div>
+
+        <div class="modal-text-content">
+            <h3 id="modalTitle"></h3>
+            <p id="modalDesc"></p>
+        </div>
+
+        <div class="modal-actions">
+            <button class="btn-outline modal-action-btn" id="modalActionClose">Retornar</button>
+            <a href="#" class="btn-primary modal-action-btn" id="modalLink" target="_blank">Acessar Repositório ↗</a>
+        </div>
+    </div>
+</div>
+
+<!--Experiencia-->
+
+<section id="experiencia" class="section">
+    <p class="section-tag">Minha trajetória</p>
+    <h2 class="section-title">Experiência & Cursos</h2>
+
+    <div class="timeline">
+        <div class="timeline-line"></div>
+        <div class="timeline-item left reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <span class="tl-period">Fev 2024 — Dez 2027</span>
+                <h3 class="tl-title">Análise e Desenvolvimento de Sistemas — IFBA</h3>
+                <ul class="tl-points">
+                    <li>Graduação tecnológica no Instituto Federal da Bahia (IFBA) em Irecê.</li>
+                    <li>Foco em engenharia de software, modelagem de banco de dados e metodologias ágeis (Scrum).</li>
+                    <li>Desenvolvimento prático de APIs REST escaláveis e interfaces web responsivas.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="timeline-item right reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <span class="tl-period">90 horas</span>
+                <h3 class="tl-title">Especialização Back-End: Java & Spring Boot</h3>
+                <ul class="tl-points">
+                    <li>Java e Programação Orientada a Objetos (40h).</li>
+                    <li>Desenvolvimento de REST APIs com Spring Boot (50h).</li>
+                    <li>Implementação de arquitetura em camadas (MVC), documentação com Swagger (OpenAPI 3) e ORM com Hibernate/JPA.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="timeline-item left reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <span class="tl-period">56 horas</span>
+                <h3 class="tl-title">Desenvolvimento Web: Front-End</h3>
+                <ul class="tl-points">
+                    <li>Curso completo de Web Dev englobando HTML5, CSS3, JavaScript e React.</li>
+                    <li>Criação de dashboards interativos e Single-Page Applications consumindo APIs externas.</li>
+                    <li>Uso de TypeScript para tipagem forte, reduzindo erros e aumentando a escalabilidade do código</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="timeline-item right reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <span class="tl-period">Cursos e Ferramentas Adicionais</span>
+                <h3 class="tl-title">Versionamento, IA e Processos</h3>
+                <ul class="tl-points">
+                    <li>Controle de Versão com Git & GitHub (50h) para fluxos de trabalho organizados.</li>
+                    <li>Inteligência Artificial Generativa & Dados pela Fundação Bradesco (52h).</li>
+                    <li>Modelagem de Processos de Negócio (BPMN) utilizando Bizagi (11h).</li>
+                    <li>Certificação oficial de uso do Sistema Eletrônico de Informações (SEI! Usar).</li>
+                </ul>
+            </div>
+        </div>
+        
+    
+    </div>
+</section>
+
+
+  <!--Skills-->
+  <section id="skills" class="section">
+    <p class="section-tag">O que eu uso</p>
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="frontend">Frontend</button>
+        <button class="filter-btn" data-filter="backend">Backend</button>
+        <button class="filter-btn" data-filter="database">Database</button>
+        <button class="filter-btn" data-filter="tools">Tools</button>
+    </div>
+
+    <div class="skills-grid-dynamic">
+        <div class="skill-card" data-category="backend">
+            <i class="devicon-java-plain"></i>
+            <span>Java</span>
+        </div>
+        <div class="skill-card" data-category="backend">
+            <i class="devicon-spring-original"></i>
+            <span>Spring Boot</span>
+        </div>
+         <div class="skill-card" data-category="backend">
+            <i class="devicon-c-plain"></i>
+            <span>C</span>
+        </div>
+        <div class="skill-card" data-category="frontend">
+            <i class="devicon-javascript-plain"></i>
+            <span>JavaScript</span>
+        </div>
+         <div class="skill-card" data-category="frontend">
+            <i class="devicon-typescript-plain"></i>
+            <span>TypeScript</span>
+        </div>
+        <div class="skill-card" data-category="frontend">
+            <i class="devicon-html5-plain"></i>
+            <span>HTML5</span>
+        </div>
+        <div class="skill-card" data-category="frontend">
+            <i class="devicon-css3-plain"></i>
+            <span>CSS3</span>
+        </div>
+        <div class="skill-card" data-category="frontend">
+            <i class="devicon-react-original"></i>
+            <span>React</span>
+        </div>
+        <div class="skill-card" data-category="backend">
+            <i class="devicon-nodejs-plain"></i>
+            <span>Node.js</span>
+        </div>
+
+        <div class="skill-card" data-category="database">
+            <i class="devicon-postgresql-plain"></i>
+            <span>PostgreSQL</span>
+        </div>
+        <div class="skill-card" data-category="database">
+            <i class="devicon-mysql-plain"></i>
+            <span>MySQL</span>
+        </div>
+          <div class="skill-card" data-category="database">
+            <i class="devicon-mongodb-plain"></i>
+            <span>MongoDB</span>
+        </div>
+        <div class="skill-card" data-category="database">
+            <i class="devicon-supabase-plain"></i>
+            <span>Supabase</span>
+        </div>
+        <div class="skill-card" data-category="tools">
+            <i class="devicon-git-plain"></i>
+            <span>Git</span>
+        </div>
+        <div class="skill-card" data-category="tools">
+            <i class="devicon-github-plain"></i>
+            <span>GitHub</span>
+        </div>
+        <div class="skill-card" data-category="tools">
+            <i class="devicon-figma-plain"></i>
+            <span>Figma</span>
+        </div>
+        <div class="skill-card" data-category="tools">
+            <i class="devicon-intellij-plain"></i>
+            <span>IntelliJ IDEA</span>
+        </div>
+        <div class="skill-card" data-category="tools">
+            <i class="devicon-swagger-plain"></i>
+            <span>Swagger</span>
+        </div>
+    </div>
+</section>
+
+
+  <!-- ========== CONTATO ========== -->
+<section id="contato">
+    <div class="contact-container">
+        <span class="section-tag">Vamos Trabalhar Juntos!</span>
+        <h2 class="section-title">Entre em contato</h2>
+        <span class="contact-sub">Ficou interessado? Me manda uma mensagem!</span>
+
+        <form id="meuFormulario" class="contact-form">
+            <div class="form-group">
+                <label>Nome</label>
+                <input type="text" name="nome" placeholder="Seu nome" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="seu@email.com" required>
+            </div>
+
+            <div class="form-group">
+                <label>Mensagem</label>
+                <textarea name="mensagem" placeholder="Me conta seu projeto..." required></textarea>
+            </div>
+
+            <button type="submit" id="btnEnviar" class="btn-submit">Enviar Mensagem</button>
+        </form>
+
+        <div id="mensagem-sucesso">
+            ✅ E-mail enviado com sucesso! Falo com você em breve.
+        </div>
+    </div>
+</section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <p>&lt;ketlin<span>.dev&gt;</span> — Feito com ♥ por Ketlin</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

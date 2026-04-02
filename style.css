@@ -1,0 +1,1232 @@
+:root {
+  --bg: #0d0d12;
+  --bg-secondary: #13131a;
+  --pink: #ff3fa4;
+  --pink-dim: rgba(255, 63, 164, 0.15);
+  --pink-border: rgba(255, 63, 164, 0.3);
+  --text: #e8e6f0;
+  --muted: rgba(232, 230, 240, 0.45);
+  --glass: rgba(255, 255, 255, 0.04);
+  --border: rgba(255, 255, 255, 0.08);
+  --radius: 14px;
+  --radius-sm: 8px;
+  --transition: 0.3s ease;
+}
+
+body.light-mode {
+  /* Fundo "Creme Soft" - menos agressivo que branco puro */
+  --bg: #FBF9F6; 
+  --bg-secondary: #F5F1E9; /* Mais profundo para cards */
+  
+  /* Rosa Pastel - Mais saturado para ter destaque */
+  --pink: #FF66A3; 
+  --pink-dim: rgba(255, 102, 163, 0.1);
+  --pink-border: rgba(255, 102, 163, 0.4);
+  
+  /* Fontes - Escurecidas para legibilidade máxima */
+  --text: #1F1D22;         /* Quase preto para títulos */
+  --muted: #4F4C54;        /* Cinza escuro legível para textos longos */
+  
+  /* Elementos de Vidro Inversos (Clarificados) */
+  --glass: rgba(0, 0, 0, 0.04); 
+  --border: rgba(0, 0, 0, 0.1);
+}
+
+/* ================================
+   AJUSTES GERAIS DE CONTRASTE NO LIGHT MODE
+================================ */
+
+/* Garante contraste nos placeholders e labels */
+body.light-mode label,
+body.light-mode input::placeholder,
+body.light-mode textarea::placeholder {
+    color: var(--muted) !important;
+    opacity: 1;
+}
+
+/* Melhora a legibilidade do botão de CTA na navbar */
+body.light-mode .btn-cta {
+    color: #fff !important; /* Texto branco no botão rosa */
+}
+
+/* ================================
+   AJUSTES DE BOTÕES DE REDES SOCIAIS (SOBRE)
+================================ */
+
+/* Corrige o sumiço dos botões na seção Sobre */
+body.light-mode .social-btn {
+    background: #FFFFFF; /* Fundo branco no botão */
+    border: 1px solid var(--pink-border); /* Borda rosa sutil */
+    color: var(--pink); /* Ícone e texto rosa */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Sombra suave */
+}
+
+body.light-mode .social-btn:hover {
+    background: var(--pink); /* Fundo rosa no hover */
+    border-color: var(--pink);
+    color: #fff; /* Texto/Ícone branco no hover */
+    transform: translateY(-3px);
+}
+
+
+/* 1. Intensifica o brilho ao redor da foto do Hero */
+body.light-mode .photo-wrap::before {
+    background: rgba(255, 102, 163, 0.25); /* Mais opaco */
+    filter: blur(45px); /* Desfoque maior */
+    transform: scale(1.2); /* Maior área de brilho */
+}
+
+/* 2. Restaura o glow no painel do Sobre Mim */
+body.light-mode .about-card {
+    background: #FFFFFF;
+    border: 1px solid var(--pink-border);
+    /* Sombra de contorno suave combinada com glow rosa */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06), 0 0 20px rgba(255, 133, 192, 0.2);
+}
+body.light-mode .navbar {
+    background: rgba(251, 249, 246, 0.98); 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* A luz "behind" o card também volta, mas sutil */
+body.light-mode .about-card::before {
+    background: var(--pink);
+    opacity: 0.1; /* Sutil para não doer os olhos */
+    filter: blur(100px);
+}
+
+body.light-mode .nav-links a {
+    color: #1A181E !important; /* Um cinza quase preto para nitidez máxima */
+    opacity: 1 !important;     /* Remove qualquer transparência herdada */
+    font-weight: 600;          /* Aumenta um pouco o peso da fonte */
+    transition: color var(--transition);
+}
+
+body.light-mode .nav-links a:hover {
+    color: var(--pink) !important; /* Rosa no hover para feedback visual */
+}
+
+body.light-mode .logo, 
+body.light-mode .logo span {
+    color: #1A181E !important;
+}
+
+/* Opcional: Se o botão 'Let's Work Together' estiver com texto ruim */
+body.light-mode .btn-cta {
+    color: #FFFFFF !important;
+    background-color: var(--pink);
+}
+
+body.light-mode .logo span {
+    color: var(--text);
+}
+
+/* Botões de filtro de Skills (estavam invisíveis) */
+body.light-mode .filter-btn {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    color: var(--muted);
+}
+
+body.light-mode .filter-btn.active, 
+body.light-mode .filter-btn:hover {
+    background: var(--pink);
+    border-color: var(--pink);
+    color: #FFFFFF;
+}
+
+/* Bordas dos Cards de Skill */
+body.light-mode .skill-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.12); /* Borda mais definida */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+
+/* Força a borda no botão outline no modo claro */
+body.light-mode .btn-outline {
+    border: 1px solid var(--pink-border) !important;
+    color: var(--pink);
+    background: transparent;
+}
+
+body.light-mode .btn-outline:hover {
+    background: var(--pink);
+    color: #FFFFFF;
+    border-color: var(--pink) !important;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espaço entre o ícone e o botão rosa */
+    margin-left: 20px;
+}
+
+#theme-toggle {
+    display: inline-flex !important; /* Garante que ele não seja 'none' */
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid var(--pink-border); /* Uma bordinha sutil ajuda a localizar */
+    color: var(--text) !important;       /* Força a cor do texto do tema */
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 8px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+    z-index: 1000; /* Garante que não fique atrás de nada */
+}
+
+#theme-toggle:hover {
+    color: var(--pink);
+    transform: rotate(15deg) scale(1.1); /* Efeito lúdico ao passar o mouse */
+}
+
+/* No Light Mode, garantimos que ele seja bem visível */
+body.light-mode #theme-toggle {
+    color: #1A181E !important;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .about-card .about-title, 
+body.light-mode .about-card strong, .about-card h3{
+    color: var(--pink) !important; /* Rosa pastel saturado para o nome */
+    font-weight: 700;
+}
+
+body.light-mode .about-card .about-intro .about-card h3 {
+    color: var(--text) !important; /* Cinza escuroquase preto */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { display: block; max-width: 100%; }
+
+
+/* ================================
+   UTILITÁRIOS
+================================ */
+.section {
+  padding: 100px 6vw;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-tag {
+  font-size: 12px;
+  color: var(--pink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 50px;
+}
+
+.highlight { color: var(--pink); }
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ================================
+   BOTÕES
+================================ */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--pink);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 28px;
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.btn-primary:hover { opacity: 0.85; transform: translateY(-2px); }
+
+.btn-outline {
+  display: inline-block;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(232, 230, 240, 0.3);
+  border-radius: 30px;
+  padding: 12px 28px;
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition), transform var(--transition);
+}
+
+.btn-outline:hover {
+  background-color: var(--pink);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.btn-full { width: 100%; text-align: center; }
+
+
+/* ================================
+   NAVBAR
+================================ */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 4vw;
+  background: rgba(13, 13, 18, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--pink);
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.logo span { color: var(--text); }
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  flex-shrink: 1;
+}
+
+.nav-links a {
+  font-size: 13px;
+  color: var(--muted);
+  white-space: nowrap;
+  transition: color var(--transition);
+}
+
+.nav-links a:hover { color: var(--text); }
+
+.btn-cta {
+  background: var(--pink);
+  color: #fff;
+  border-radius: 30px;
+  padding: 9px 22px;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity var(--transition);
+}
+
+.btn-cta:hover { opacity: 0.85; }
+
+
+/* ================================
+   HERO
+================================ */
+.hero {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens "quebrem" para a linha de baixo */
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 100px 5%;
+}
+
+.hero-left, .hero-right {
+    flex: 1 1 400px; /* Cresce, diminui e tem base de 400px */
+}
+
+.badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--pink);
+  border: 1px solid var(--pink-border);
+  border-radius: 30px;
+  padding: 6px 16px;
+  margin-bottom: 24px;
+  width: fit-content;
+  letter-spacing: 0.04em;
+}
+
+.hero-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(32px, 4.5vw, 56px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 12px;
+}
+
+.hero-role {
+  font-size: 16px;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.hero-desc {
+  font-size: 15px;
+  color: var(--muted);
+  max-width: 420px;
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+.hero-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.pill {
+  font-size: 12px;
+  border: 1px solid var(--pink-border);
+  color: var(--pink);
+  border-radius: 20px;
+  padding: 4px 14px;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Foto */
+.hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-wrap {
+  position: relative;
+  width: fit-content;
+}
+
+.photo-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  background: rgba(255, 63, 164, 0.15);
+  filter: blur(36px);
+  z-index: 0;
+}
+
+.photo-wrap::after {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 63, 164, 0.25);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.photo-ring {
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  border: 2.5px solid var(--pink);
+  padding: 5px;
+  position: relative;
+  z-index: 1;
+}
+
+.photo-ring img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.available-badge {
+  position: absolute;
+  bottom: 16px;
+  right: -20px;
+  background: rgba(13, 13, 18, 0.95);
+  border: 1px solid var(--pink-border);
+  border-radius: 20px;
+  padding: 7px 14px;
+  font-size: 12px;
+  color: var(--pink);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+}
+
+.available-badge::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--pink);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+/*projetos*/
+
+.projects-grid {
+    display: grid;
+    /* Cria quantas colunas couberem com no mínimo 300px cada */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 20px;
+}
+.project-card {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column; /* Garante que o conteúdo interno empilhe certo */
+    height: 100%; /* Faz todos os cards terem a mesma altura na linha */
+    transition: border-color var(--transition), transform var(--transition);
+}
+
+.project-card:hover {
+  border-color: var(--pink-border);
+  transform: translateY(-4px);
+}
+
+.project-thumb {
+  position: relative;
+  overflow: hidden;
+  height: 180px;
+  background: var(--bg-secondary);
+}
+
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+.project-card:hover .project-thumb img { transform: scale(1.05); }
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 63, 164, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition);
+  font-size: 14px;
+  color: #fff;
+  font-weight: 500;
+  backdrop-filter: blur(2px);
+}
+
+.project-card:hover .project-overlay { opacity: 1; }
+
+.project-info { padding: 18px; }
+
+.project-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.project-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.project-stack { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.stack-tag {
+  font-size: 11px;
+  background: var(--pink-dim);
+  color: var(--pink);
+  border-radius: 10px;
+  padding: 3px 10px;
+}
+
+/* Estilos para o Modal */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    display: none; /* Escondido por padrão */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: flex; /* Aparece com active */
+    opacity: 1;
+}
+
+.modal {
+    background: var(--bg-secondary);
+    padding: 30px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    max-width: 750px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal {
+    transform: scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 10;
+}
+
+.modal-close:hover { color: var(--pink); }
+
+/* Área da Imagem Principal */
+.modal-main-image {
+    width: 100%;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.modal-main-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Área das Miniaturas (Galeria) */
+.modal-thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: -10px 0 10px 0;
+}
+
+.modal-thumb {
+    width: 80px;
+    height: 50px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+
+.modal-thumb:hover { opacity: 1; }
+
+.modal-thumb.active {
+    border-color: var(--pink);
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+.modal-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Conteúdo de Texto */
+.modal-text-content h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.modal-text-content p {
+    font-size: 14px;
+    color: var(--muted);
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+/* Botões de Ação na Base */
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.modal-action-btn {
+    padding: 10px 24px;
+    font-size: 14px;
+    min-width: 160px;
+}
+
+.modal-main-image {
+    width: 100%;
+    /* Define uma proporção fixa (ex: 16/9) para que o container nunca mude de altura */
+    aspect-ratio: 16 / 9; 
+    background-color: #1a1a1a; /* Cor de fundo para imagens menores que o container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+}
+
+.modal-main-image img {
+    width: 100%;
+    height: 100%;
+    /* 'contain' garante que a imagem apareça inteira sem esticar, 
+       'cover' preenche tudo (escolha o que preferir) */
+    object-fit: contain; 
+    display: block;
+    /* Transição suave de opacidade */
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Classe para o efeito de fade no JS */
+.img-fade {
+    opacity: 0;
+}
+
+/* ================================
+   TIMELINE
+================================ */
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+/* A linha central que desce */
+.timeline-line {
+    position: absolute;
+    left: 50%; /* Centraliza a linha */
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--pink), rgba(255, 63, 164, 0.05));
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* O container de cada item (Ocupa 100% da largura, mas o conteúdo só ocupa metade) */
+.timeline-item {
+    position: relative;
+    width: 100%;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+/* Configura o lado Esquerdo */
+.timeline-item.left {
+    flex-direction: row-reverse; /* Inverte a ordem para alinhar o conteúdo à esquerda */
+}
+
+/* Configura o lado Direito */
+.timeline-item.right {
+    flex-direction: row;
+}
+
+/* A caixinha com o texto */
+.timeline-content {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    width: 45%; /* Ocupa um pouco menos da metade para dar espaço à linha central */
+    transition: border-color var(--transition), transform var(--transition);
+}
+
+.timeline-content:hover { 
+    border-color: var(--pink-border); 
+    transform: translateY(-5px);
+}
+
+/* O pontinho central */
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px; 
+    height: 16px;
+    border-radius: 50%;
+    background: var(--pink);
+    border: 4px solid var(--bg);
+    box-shadow: 0 0 0 2px var(--pink);
+    z-index: 3;
+}
+
+/* Textos da Timeline */
+.tl-period {
+    display: inline-block;
+    font-size: 12px;
+    color: var(--pink);
+    letter-spacing: 0.06em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.tl-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.tl-points {
+    list-style: none;
+    padding: 0;
+}
+
+.tl-points li {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+    padding-left: 18px;
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.tl-points li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: var(--pink);
+    font-size: 14px;
+}
+
+/* Animação Reveal ao rolar a página */
+.reveal {
+    opacity: 0;
+    transition: all 0.8s ease-out;
+}
+
+/* Item da esquerda vem deslizando da esquerda */
+.timeline-item.left.reveal {
+    transform: translateX(-50px);
+}
+
+/* Item da direita vem deslizando da direita */
+.timeline-item.right.reveal {
+    transform: translateX(50px);
+}
+
+/* Classe adicionada via JavaScript quando o item entra na tela */
+.timeline-item.reveal.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ================================
+   SOBRE MIM (DESTAQUE)
+================================ */
+.about-card {
+    /* Gradiente muito suave, puxando um pouco do rosa/magenta */
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 20, 147, 0.03) 100%);
+    border: 1px solid rgba(255, 20, 147, 0.2); /* Borda com toque da cor destaque */
+    border-radius: 24px;
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    /* Glow suave atrás do card */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 20, 147, 0.05); 
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 20, 147, 0.1);
+}
+
+/* Efeito visual extra de "luz" no fundo do card */
+.about-card::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: var(--pink); /* Puxa sua variável de cor */
+    filter: blur(80px);
+    opacity: 0.15;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.about-content {
+    position: relative;
+    z-index: 1; /* Mantém o texto acima da luz de fundo */
+    text-align: left;
+}
+
+.about-content h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.about-content p {
+    font-size: 16px;
+    color: var(--muted); /* Puxa a cor do texto padrão */
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.about-content strong {
+    color: var(--pink); /* Destaca as tecnologias */
+    font-weight: 600;
+}
+
+/* Botões de Redes Sociais */
+.about-socials {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.social-btn i {
+    font-size: 18px;
+}
+
+.social-btn:hover {
+    background: var(--pink);
+    border-color: var(--pink);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+
+/* ================================
+   SKILLS
+================================ */
+.skills-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: var(--pink);
+    border-color: var(--pink);
+}
+
+.skills-grid-dynamic {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.skill-card i {
+    font-size: 40px;
+    color: var(--pink);
+}
+
+.skill-card span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.07);
+    border-color: var(--pink);
+}
+
+/* Animação de Esconder */
+.skill-card.hidden {
+    display: none;
+}
+
+/* ================================
+   CONTATO
+================================ */
+/* ================================
+   CONTATO (REVISADO)
+================================ */
+#contato {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;    
+    padding: 100px 6vw;
+    margin: 0 auto;
+}
+
+.contact-container {
+    width: 100%;
+    max-width: 560px; /* Mantém a largura elegante */
+    text-align: center;
+}
+
+.contact-sub {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 40px;
+    display: block;
+}
+
+/* Ajuste do formulário para usar os grupos */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left; /* Alinha labels à esquerda */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 14px 18px;
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    outline: none;
+    transition: border-color var(--transition), background var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus { 
+    border-color: var(--pink-border); 
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* Botão de Envio */
+.btn-submit {
+    margin-top: 10px;
+    width: 100%;
+    background-color: var(--pink);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn-submit:hover { opacity: 0.9; transform: translateY(-2px); }
+.btn-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* Mensagem de Sucesso */
+#mensagem-sucesso {
+    display: none;
+    margin-top: 25px;
+    padding: 15px;
+    background: var(--pink-dim);
+    border: 1px solid var(--pink-border);
+    color: var(--pink);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    animation: fadeIn 0.5s ease;
+}
+
+#mensagem-sucesso.show { display: block; }
+
+
+/* ================================
+   FOOTER
+================================ */
+
+.footer {
+  text-align: center;
+  padding: 32px 6vw;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--muted);
+
+}
+
+.footer span { color: var(--pink); }
+
+/* =========================================
+   FIM DO CSS DESKTOP
+   INÍCIO DA RESPONSIVIDADE (MEDIA QUERIES)
+========================================= */
+
+/* --- TABLETS E TELAS MENORES (Até 992px) --- */
+@media (max-width: 992px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    /* Esconde os links textuais (Home, Sobre, etc) */
+    .nav-links {
+        display: none !important;
+    }
+
+    /* Garante que a navbar distribua o Logo na esquerda e os botões na direita */
+    .navbar {
+        justify-content: space-between;
+        padding: 15px 5%; /* Mantém o alinhamento com as laterais */
+    }
+
+    /* Reduz levemente o espaço entre o ícone do tema e o botão rosa */
+    .nav-actions {
+        gap: 15px;
+    }
+}
+/* --- CELULARES PEQUENOS (Até 480px) --- */
+@media (max-width: 480px) {
+    /* Diminui o padding e a fonte do botão CTA para ele não quebrar a tela */
+    .btn-cta {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+    }
+    
+    /* Aproxima mais o botão de tema do CTA */
+    .nav-actions {
+        gap: 10px;
+    }
+    
+    /* Reduz levemente o ícone do tema para manter a proporção */
+    #theme-toggle {
+        font-size: 1.1rem;
+        width: 35px;
+        height: 35px;
+    }
+}
