@@ -1,24 +1,34 @@
 package ketlin.portifolio.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
+import com.sendgrid.*;
+import com.sendgrid.helpers.mail.Mail;
+import com.sendgrid.helpers.mail.objects.Content;
+import com.sendgrid.helpers.mail.objects.Email;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import ketlin.portifolio.dto.ContatoDTO;
+import java.io.IOException;
 
 @Service
 public class EmailService {
 
-    @Autowired
-    private JavaMailSender mailSender;
+    @Value("${sendgrid.api.key}")
+    private String sendGridApiKey;
 
-    public void enviarEmail(ContatoDTO dados) {
-        SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("KetlinOliveira20044@gmail.com");
-        message.setTo("KetlinOliveira20044@gmail.com"); // Seu e-mail de destino 
-        message.setSubject("Novo contacto de: " + dados.nome());
-        message.setText("Mensagem: " + dados.mensagem() + "\n\nResponder para: " + dados.email());
-
-        mailSender.send(message);
+    public void enviarEmail(ContatoDTO dados) throws IOException {
+        Email from = new Email("KetlinOliveira20044@gmail.com");
+        Email to = new Email("KetlinOliveira20044@gmail.com");
+        String subject = "Novo contato de: " + dados.nome();
+        Content content = new Content("text/plain", 
+            "Mensagem: " + dados.mensagem() + "\n\nResponder para: " + dados.email());
+        
+        Mail mail = new Mail(from, subject, to, content);
+        SendGrid sg = new SendGrid(sendGridApiKey);
+        Request request = new Request();
+        
+        request.setMethod(Method.POST);
+        request.setEndpoint("mail/send");
+        request.setBody(mail.build());
+        sg.api(request);
     }
 }
