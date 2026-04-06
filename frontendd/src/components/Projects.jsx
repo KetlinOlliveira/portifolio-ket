@@ -82,7 +82,7 @@ function Projects() {
         {projectsData.map((project) => (
           <div
             key={project.id}
-            className="project-card fade-in"
+            className="project-card"
             onClick={() => setSelectedProject(project)}
           >
             <div className="project-thumb">
