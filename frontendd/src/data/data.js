@@ -166,7 +166,7 @@ export const experienceData = [
     period: '2026 — Presente',
     title: 'Desenvolvedora de Software — Cidades Inteligentes Municípios',
     points: [
-      'Atuo no desenvolvimento do módulo de adoção de animais do e-Cidade, solução voltada a facilitar o acesso da população de Irecê (BA) aos serviços da prefeitura e das secretarias.',
+      'Atuo no desenvolvimento do módulo de adoção de animais do Conecta, solução voltada a facilitar o acesso da população de Irecê (BA) aos serviços da prefeitura e das secretarias.',
       'Participo do ciclo completo de desenvolvimento, da modelagem à implementação de APIs REST em Java e Spring Boot integradas ao frontend.',
       'Projeto em desenvolvimento ativo, com foco em usabilidade e escalabilidade para o cidadão.',
     ],
