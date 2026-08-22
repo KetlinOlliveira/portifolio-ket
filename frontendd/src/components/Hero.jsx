@@ -36,7 +36,7 @@ function Hero() {
       <div className="hero-right">
         <div className="photo-wrap">
           <div className="photo-ring">
-            <img src="/assets/image/eu.jpg" alt="Ketlin" />
+            <img src="/assets/image/eu.png" alt="Ketlin" />
           </div>
           <div className="available-badge">Disponível para projetos</div>
         </div>

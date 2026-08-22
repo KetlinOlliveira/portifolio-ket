@@ -50,6 +50,33 @@ export const projectsData = [
     ],
     github: 'https://github.com/KetlinOlliveira/contacts-app',
   },
+  {
+    id: 4,
+    name: 'Stardew Valley | Guia do Centro Comunitário',
+    desc: 'Guia interativo full stack para jogadores de Stardew Valley, com consulta em tempo real dos conjuntos (bundles) e itens do Centro Comunitário, consumindo uma API própria em Java e Spring Boot.',
+    stack: ['Java', 'Springboot', 'PostgreSQL', 'React', 'Tailwind CSS'],
+    thumb: '/assets/projetos/stardewvalley/stardew-1.png',
+    images: [
+      '/assets/projetos/stardewvalley/stardew-1.png',
+      '/assets/projetos/stardewvalley/stardew-2.png',
+      '/assets/projetos/stardewvalley/stardew-3.png',
+      '/assets/projetos/stardewvalley/stardew-4.png',
+    ],
+    github: 'https://github.com/KetlinOlliveira/stardewvalley-checklist-frontend',
+    demo: 'https://stardewvalley-guia.vercel.app',
+  },
+  {
+    id: 5,
+    name: 'FindPet | Plataforma de Adoção de Animais',
+    desc: 'Plataforma para conectar pessoas a animais que precisam de um lar, promovendo uma adoção mais segura e responsável. API REST em Java e Spring Boot, organizada por domínio (controller, service, repository e DTO) com tratamento global de exceções.',
+    stack: ['Java', 'Springboot', 'Spring Data JPA', 'H2 Database'],
+    thumb: '/assets/projetos/findpet/findpet-1.png',
+    images: [
+      '/assets/projetos/findpet/findpet-1.png',
+      '/assets/projetos/findpet/findpet-2.png',
+    ],
+    github: 'https://github.com/KetlinOlliveira/backend-findpet',
+  },
 ]
 
 // ================================
@@ -58,22 +85,30 @@ export const projectsData = [
 export const skillsData = [
   { icon: 'devicon-java-plain', label: 'Java', category: 'backend' },
   { icon: 'devicon-spring-original', label: 'Spring Boot', category: 'backend' },
+  { icon: 'devicon-spring-original', label: 'Spring Security', category: 'backend' },
   { icon: 'devicon-c-plain', label: 'C', category: 'backend' },
+  { icon: 'devicon-apachekafka-original', label: 'Apache Kafka', category: 'backend' },
+  { icon: 'devicon-rabbitmq-original', label: 'RabbitMQ', category: 'backend' },
   { icon: 'devicon-javascript-plain', label: 'JavaScript', category: 'frontend' },
   { icon: 'devicon-typescript-plain', label: 'TypeScript', category: 'frontend' },
   { icon: 'devicon-html5-plain', label: 'HTML5', category: 'frontend' },
   { icon: 'devicon-css3-plain', label: 'CSS3', category: 'frontend' },
   { icon: 'devicon-react-original', label: 'React', category: 'frontend' },
+  { icon: 'devicon-tailwindcss-plain', label: 'Tailwind CSS', category: 'frontend' },
   { icon: 'devicon-nodejs-plain', label: 'Node.js', category: 'backend' },
   { icon: 'devicon-postgresql-plain', label: 'PostgreSQL', category: 'database' },
   { icon: 'devicon-mysql-plain', label: 'MySQL', category: 'database' },
   { icon: 'devicon-mongodb-plain', label: 'MongoDB', category: 'database' },
   { icon: 'devicon-supabase-plain', label: 'Supabase', category: 'database' },
+  { icon: 'devicon-redis-plain', label: 'Redis', category: 'database' },
   { icon: 'devicon-git-plain', label: 'Git', category: 'tools' },
   { icon: 'devicon-github-plain', label: 'GitHub', category: 'tools' },
+  { icon: 'devicon-githubactions-plain', label: 'GitHub Actions (CI/CD)', category: 'tools' },
+  { icon: 'devicon-docker-plain', label: 'Docker', category: 'tools' },
   { icon: 'devicon-figma-plain', label: 'Figma', category: 'tools' },
   { icon: 'devicon-intellij-plain', label: 'IntelliJ IDEA', category: 'tools' },
   { icon: 'devicon-swagger-plain', label: 'Swagger', category: 'tools' },
+  { icon: 'devicon-junit-plain', label: 'JUnit 5', category: 'tools' },
 ]
 
 // ================================
@@ -123,6 +158,29 @@ export const experienceData = [
       'Inteligência Artificial Generativa & Dados pela Fundação Bradesco (52h).',
       'Modelagem de Processos de Negócio (BPMN) utilizando Bizagi (11h).',
       'Certificação oficial de uso do Sistema Eletrônico de Informações (SEI! Usar).',
+    ],
+  },
+  {
+    id: 4,
+    side: 'left',
+    period: '2026 — Presente',
+    title: 'Desenvolvedora de Software — Cidades Inteligentes Municípios',
+    points: [
+      'Atuo no desenvolvimento do módulo de adoção de animais do e-Cidade, solução voltada a facilitar o acesso da população de Irecê (BA) aos serviços da prefeitura e das secretarias.',
+      'Participo do ciclo completo de desenvolvimento, da modelagem à implementação de APIs REST em Java e Spring Boot integradas ao frontend.',
+      'Projeto em desenvolvimento ativo, com foco em usabilidade e escalabilidade para o cidadão.',
+    ],
+  },
+  {
+    id: 5,
+    side: 'right',
+    period: 'Mai 2026 — Presente',
+    title: 'Líder Técnica — Observatório da Mulher',
+    points: [
+      'Lidero uma equipe de 3 desenvolvedores na criação de uma plataforma de apoio à rede municipal de proteção, integrando cerca de 5 instituições e centralizando os dados de atendimento.',
+      'Substitui o fluxo histórico baseado em papel por um sistema digital em PostgreSQL, otimizando a busca de dados e o desempenho das técnicas de acolhimento.',
+      'Planejei a arquitetura em Monolito Modular com Java e Spring Boot, isolando os domínios de cada instituição para evolução independente, com autenticação via Spring Security e JWT.',
+      'Estabeleci o fluxo de engenharia da equipe com GitFlow, pull requests, code review e testes unitários (JUnit 5 e Mockito).',
     ],
   },
 ]

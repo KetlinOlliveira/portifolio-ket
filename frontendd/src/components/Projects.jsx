@@ -61,6 +61,11 @@ function Modal({ project, onClose }) {
 
         <div className="modal-actions">
           <button className="btn-outline modal-action-btn" onClick={onClose}>Retornar</button>
+          {project.demo && (
+            <a href={project.demo} className="btn-outline modal-action-btn" target="_blank" rel="noreferrer">
+              Ver Projeto ↗
+            </a>
+          )}
           <a href={project.github} className="btn-primary modal-action-btn" target="_blank" rel="noreferrer">
             Acessar Repositório ↗
           </a>

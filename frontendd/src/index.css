@@ -545,7 +545,7 @@ img { display: block; max-width: 100%; }
 .modal-text-content h3 { font-size: 20px; margin-bottom: 8px; }
 .modal-text-content p { font-size: 14px; color: var(--muted); max-width: 550px; margin: 0 auto; }
 
-.modal-actions { display: flex; justify-content: center; gap: 15px; }
+.modal-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
 .modal-action-btn { padding: 10px 24px; font-size: 14px; min-width: 160px; }
 
 /* ================================

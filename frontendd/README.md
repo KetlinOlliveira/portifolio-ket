@@ -23,7 +23,7 @@ portfolio-react/
 ├── public/
 │   └── assets/
 │       ├── image/
-│       │   └── eu.jpg           ← sua foto aqui
+│       │   └── eu.png           ← sua foto aqui
 │       └── projetos/
 │           ├── projeto-service-1.png
 │           ├── projeto-wepet-2.png
@@ -58,7 +58,7 @@ Mova a pasta `assets/` que você já tem para dentro de `public/`:
 public/
   assets/
     image/
-      eu.jpg
+      eu.png
     projetos/
       projeto-service-1.png
       projeto-wepet-2.png
