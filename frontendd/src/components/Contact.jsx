@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { contactInfo } from '../data/data'
 
 // ─────────────────────────────────────────────────────────────
 //  URL DO BACKEND
@@ -51,15 +52,19 @@ function Contact() {
   return (
     <section id="contato">
       <div className="contact-container">
-        <span className="section-tag">Vamos Trabalhar Juntos!</span>
+        <span className="section-tag">Vamos conversar</span>
         <h2 className="section-title">Entre em contato</h2>
-        <span className="contact-sub">Ficou interessado? Me manda uma mensagem!</span>
+        <span className="contact-sub">
+          Tem uma vaga, um projeto ou quer trocar uma ideia? Mande uma mensagem ou escreva para{' '}
+          <a href={`mailto:${contactInfo.email}`} className="highlight">{contactInfo.email}</a>.
+        </span>
 
         <form className="contact-form" onSubmit={handleSubmit}>
           <div className="form-group">
-            <label>Nome</label>
+            <label htmlFor="contato-nome">Nome</label>
             <input
               type="text"
+              id="contato-nome"
               name="nome"
               placeholder="Seu nome"
               value={form.nome}
@@ -69,9 +74,10 @@ function Contact() {
           </div>
 
           <div className="form-group">
-            <label>Email</label>
+            <label htmlFor="contato-email">Email</label>
             <input
               type="email"
+              id="contato-email"
               name="email"
               placeholder="seu@email.com"
               value={form.email}
@@ -81,10 +87,11 @@ function Contact() {
           </div>
 
           <div className="form-group">
-            <label>Mensagem</label>
+            <label htmlFor="contato-mensagem">Mensagem</label>
             <textarea
+              id="contato-mensagem"
               name="mensagem"
-              placeholder="Me conta seu projeto..."
+              placeholder="Conte um pouco sobre a vaga ou o projeto..."
               value={form.mensagem}
               onChange={handleChange}
               required
@@ -102,14 +109,15 @@ function Contact() {
         </form>
 
         {status === 'success' && (
-          <div id="mensagem-sucesso" className="show">
+          <div id="mensagem-sucesso" className="show" role="status">
             ✅ E-mail enviado com sucesso! Falo com você em breve.
           </div>
         )}
 
         {status === 'error' && (
-          <div id="mensagem-sucesso" className="show" style={{ borderColor: '#ff4d4d', color: '#ff4d4d' }}>
-            ❌ Erro ao enviar. Verifique se o back-end está rodando.
+          <div id="mensagem-sucesso" className="show" role="alert" style={{ borderColor: '#ff4d4d', color: '#ff4d4d' }}>
+            ❌ Não consegui enviar agora. Tente de novo ou escreva direto para{' '}
+            <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>.
           </div>
         )}
       </div>

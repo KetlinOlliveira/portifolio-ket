@@ -9,23 +9,15 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 function App() {
-  const [lightMode, setLightMode] = useState(false)
-
-  // Aplica tema salvo no localStorage ao carregar
-  useEffect(() => {
-    const saved = localStorage.getItem('theme')
-    if (saved === 'light') setLightMode(true)
-  }, [])
+  // Lê o tema salvo já na inicialização para evitar piscar o tema errado
+  const [lightMode, setLightMode] = useState(() => {
+    try { return localStorage.getItem('theme') === 'light' } catch { return false }
+  })
 
   // Sincroniza a classe no body sempre que lightMode mudar
   useEffect(() => {
-    if (lightMode) {
-      document.body.classList.add('light-mode')
-      localStorage.setItem('theme', 'light')
-    } else {
-      document.body.classList.remove('light-mode')
-      localStorage.setItem('theme', 'dark')
-    }
+    document.body.classList.toggle('light-mode', lightMode)
+    try { localStorage.setItem('theme', lightMode ? 'light' : 'dark') } catch { /* storage bloqueado */ }
   }, [lightMode])
 
   const toggleTheme = () => setLightMode(prev => !prev)
@@ -33,12 +25,14 @@ function App() {
   return (
     <>
       <Navbar lightMode={lightMode} toggleTheme={toggleTheme} />
-      <Hero />
-      <About />
-      <Projects />
-      <Experience />
-      <Skills />
-      <Contact />
+      <main>
+        <Hero />
+        <About />
+        <Projects />
+        <Experience />
+        <Skills />
+        <Contact />
+      </main>
       <Footer />
     </>
   )

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { experienceData } from '../data/data'
 
-function TimelineItem({ item }) {
+function TimelineItem({ item, side }) {
   const ref = useRef(null)
 
   useEffect(() => {
@@ -19,16 +19,24 @@ function TimelineItem({ item }) {
   }, [])
 
   return (
-    <div ref={ref} className={`timeline-item ${item.side} reveal`}>
+    <div ref={ref} className={`timeline-item ${side} reveal${item.inProgress ? ' in-progress' : ''}`}>
       <div className="timeline-dot"></div>
       <div className="timeline-content">
         <span className="tl-period">{item.period}</span>
         <h3 className="tl-title">{item.title}</h3>
+        {item.org && <p className="tl-org">{item.org}</p>}
         <ul className="tl-points">
-          {item.points.map((point, i) => (
-            <li key={i}>{point}</li>
+          {item.points.map((point) => (
+            <li key={point}>{point}</li>
           ))}
         </ul>
+        {item.tags && (
+          <div className="project-stack">
+            {item.tags.map((tag) => (
+              <span key={tag} className="stack-tag">{tag}</span>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   )
@@ -42,8 +50,8 @@ function Experience() {
 
       <div className="timeline">
         <div className="timeline-line"></div>
-        {experienceData.map((item) => (
-          <TimelineItem key={item.id} item={item} />
+        {experienceData.map((item, i) => (
+          <TimelineItem key={item.id} item={item} side={i % 2 === 0 ? 'left' : 'right'} />
         ))}
       </div>
     </section>

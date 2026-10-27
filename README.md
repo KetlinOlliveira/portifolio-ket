@@ -6,10 +6,9 @@
 
 **`Desenvolvedora Full-Stack`**
 
-*Criando experiências digitais cativantes, escaláveis e de alta qualidade*
-*— com código limpo e atenção ao detalhe.*
+*Java · Spring Boot · React · Next.js · IA aplicada*
 
-[![Portfolio](https://img.shields.io/badge/🌐_Ver_Portfólio-FF1493?style=for-the-badge)](https://melodious-muffin-6d8e71.netlify.app)
+[![Portfolio](https://img.shields.io/badge/🌐_Ver_Portfólio-FF1493?style=for-the-badge)](https://portifolio-ket.vercel.app)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-FF69B4?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ketlin-oliveiradev)
 [![GitHub](https://img.shields.io/badge/GitHub-FFB6C1?style=for-the-badge&logo=github&logoColor=black)](https://github.com/KetlinOlliveira)
 
@@ -25,7 +24,7 @@
 
 ## 💜 Sobre o Projeto
 
-Portfólio pessoal desenvolvido para apresentar minha trajetória, projetos e habilidades como desenvolvedora Full Stack. O projeto conta com um **frontend responsivo** em HTML, CSS e JavaScript, e um **backend em Java/Spring Boot** integrado ao SendGrid para envio de emails via formulário de contato.
+Portfólio pessoal com minha experiência, projetos e habilidades como desenvolvedora Full-Stack. O projeto tem um **frontend em React + Vite** e um **backend em Java/Spring Boot** integrado ao SendGrid para envio de e-mails pelo formulário de contato.
 
 ---
 
@@ -35,9 +34,9 @@ Portfólio pessoal desenvolvido para apresentar minha trajetória, projetos e ha
 
 **Frontend**
 
-![HTML5](https://img.shields.io/badge/HTML5-FF69B4?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-FF1493?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-FFB6C1?style=for-the-badge&logo=javascript&logoColor=black)
+![React](https://img.shields.io/badge/React-FF69B4?style=for-the-badge&logo=react&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-FF1493?style=for-the-badge&logo=vite&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-FFB6C1?style=for-the-badge&logo=css3&logoColor=black)
 
 **Backend**
 
@@ -47,7 +46,7 @@ Portfólio pessoal desenvolvido para apresentar minha trajetória, projetos e ha
 
 **Deploy**
 
-![Netlify](https://img.shields.io/badge/Netlify-FF69B4?style=for-the-badge&logo=netlify&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-FF69B4?style=for-the-badge&logo=vercel&logoColor=white)
 ![Railway](https://img.shields.io/badge/Railway-FF1493?style=for-the-badge&logo=railway&logoColor=white)
 
 </div>
@@ -56,12 +55,13 @@ Portfólio pessoal desenvolvido para apresentar minha trajetória, projetos e ha
 
 ## ✨ Funcionalidades
 
-- 🖼️ Galeria de projetos com modal interativo e miniaturas
-- 🎨 Alternância entre tema claro e escuro
-- 💌 Formulário de contato com envio de email real via SendGrid
-- 🔍 Filtro de skills por categoria
-- 📱 Layout totalmente responsivo
-- ✦ Animações de scroll com Intersection Observer
+- 🖼️ Galeria de projetos com modal acessível, destaques técnicos e links de repositório/demo
+- 💼 Experiência profissional e formação/cursos separados
+- 🎨 Alternância entre tema claro e escuro (lembrado entre visitas)
+- 💌 Formulário de contato com envio de e-mail real via SendGrid
+- 🔍 Filtro de skills por categoria (Back-end, Front-end, IA, Dados & Mensageria, DevOps)
+- 📱 Layout responsivo com menu mobile
+- ⚡ Imagens em WebP, carregamento preguiçoso e metadados de SEO/Open Graph
 
 ---
 
@@ -69,24 +69,19 @@ Portfólio pessoal desenvolvido para apresentar minha trajetória, projetos e ha
 
 ```
 portifolio-ket/
-├── 📂 frontend/
+├── 📂 frontendd/                 # React + Vite
 │   ├── index.html
-│   ├── style.css
-│   ├── script.js
-│   └── assets/
-├── 📂 src/main/java/ketlin/portifolio/
-│   ├── controller/
-│   │   └── ContatoController.java
-│   ├── dto/
-│   │   └── ContatoDTO.java
-│   ├── service/
-│   │   └── EmailService.java
-│   ├── CorsConfig.java
-│   └── PortifolioApplication.java
-├── 📂 src/main/resources/
-│   └── application.properties
-└── pom.xml
+│   ├── public/assets/            # imagens (WebP) e favicon
+│   └── src/
+│       ├── components/           # Navbar, Hero, About, Projects, Experience, Education, Skills, Contact, Footer
+│       ├── data/data.js          # todo o conteúdo do portfólio (projetos, experiência, cursos, skills)
+│       └── index.css
+└── 📂 backend/                   # Spring Boot (envio de e-mail do formulário)
+    ├── src/main/java/ketlin/portifolio/
+    └── pom.xml
 ```
+
+> Para atualizar projetos, experiência, cursos ou skills, edite apenas `frontendd/src/data/data.js`.
 
 ---
 
@@ -94,7 +89,7 @@ portifolio-ket/
 
 | | Serviço | URL |
 |---|---------|-----|
-| 🌸 | Frontend — Netlify | [melodious-muffin-6d8e71.netlify.app](https://melodious-muffin-6d8e71.netlify.app) |
+| 🌸 | Frontend — Vercel | [portifolio-ket.vercel.app](https://portifolio-ket.vercel.app) |
 | 🌺 | Backend — Railway | [portifolio-ket-production.up.railway.app](https://portifolio-ket-production.up.railway.app) |
 
 ---
@@ -103,6 +98,6 @@ portifolio-ket/
 
 **`<ketlin.dev>` — Feito com ♥ por Ketlin**
 
-[![Portfolio](https://img.shields.io/badge/Disponível_para_projetos-FF1493?style=for-the-badge)](https://melodious-muffin-6d8e71.netlify.app#contato)
+[![Portfolio](https://img.shields.io/badge/Disponível_para_projetos-FF1493?style=for-the-badge)](https://portifolio-ket.vercel.app#contato)
 
 </div>
