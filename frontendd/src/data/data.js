@@ -83,6 +83,8 @@ export const projectsData = [
       'Decisões registradas em ADRs, migrações Flyway imutáveis e promoção dev → staging → produção.',
     ],
     stack: ['Java', 'Spring Boot', 'Next.js', 'TypeScript', 'Tailwind', 'PostgreSQL', 'IA'],
+    thumb: '/assets/projetos/observatorio-capa.webp',
+    images: ['/assets/projetos/observatorio-capa.webp'],
     private: true,
   },
   {
@@ -95,9 +97,13 @@ export const projectsData = [
       'CRUD de animais com ficha veterinária, galeria de fotos, catálogo de vacinas e registro de vacinação.',
       'Catálogo público com filtros por espécie, porte, faixa etária, bairro e nome.',
       'Fluxo de solicitação de adoção com assinatura do termo de responsabilidade, envio de documento e geração do termo em PDF.',
+      'A plataforma Conecta Município já está no ar; o módulo de adoção está em fase de integração e ainda não aparece no site.',
     ],
     stack: ['Java', 'Spring Boot', 'TypeScript', 'React', 'PostgreSQL'],
+    thumb: '/assets/projetos/conecta-thumb.webp',
+    images: ['/assets/projetos/conecta-capa.webp'],
     private: true,
+    demo: 'https://conecta.irece.ba.gov.br',
   },
   {
     id: 'supermercado',
