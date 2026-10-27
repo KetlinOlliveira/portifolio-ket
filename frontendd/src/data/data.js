@@ -74,7 +74,8 @@ export const projectsData = [
     kind: 'Liderança técnica · Prefeitura de Irecê',
     desc: 'Sistema de gestão e transparência da rede de proteção à mulher de Irecê. Atuo como líder técnica e QA: arquitetei o projeto e conduzo requisitos, revisão de código e qualidade.',
     highlights: [
-      'Liderança técnica e QA: arquitetura do sistema, code review dos PRs do time, criação e priorização de issues e validação de qualidade antes de cada entrega.',
+      'Liderança técnica e QA de uma equipe de 3 devs: arquitetura do sistema, GitFlow, code review, criação e priorização de issues e validação de qualidade antes de cada entrega.',
+      'Integra cerca de 5 instituições da rede de proteção e substitui o fluxo histórico em papel por um sistema digital em PostgreSQL.',
       'Levantamento de requisitos em visitas técnicas aos clientes, Documento de Especificação de Requisitos (ERS), diagrama de classes e protótipos no Figma.',
       'Back-end em monolito modular (Spring Boot) com fronteiras verificadas em build por ArchUnit e comunicação entre módulos por eventos de domínio.',
       'Sessão migrada de JWT no corpo para cookie HttpOnly, controle de acesso por perfil e trilha de auditoria que sobrevive a rollback, com exportação em PDF/DOCX.',
@@ -239,13 +240,14 @@ export const skillsData = [
   { icon: 'devicon-mysql-plain', label: 'MySQL', category: 'dados' },
   { icon: 'devicon-mongodb-plain', label: 'MongoDB', category: 'dados' },
   { icon: 'devicon-supabase-plain', label: 'Supabase', category: 'dados' },
+  { icon: 'devicon-redis-plain', label: 'Redis', category: 'dados' },
   { icon: 'devicon-apachekafka-original', label: 'Apache Kafka', category: 'dados', learning: true },
   { icon: 'devicon-rabbitmq-original', label: 'RabbitMQ', category: 'dados', learning: true },
 
   { icon: 'devicon-docker-plain', label: 'Docker', category: 'devops' },
   { icon: 'devicon-githubactions-plain', label: 'GitHub Actions', category: 'devops' },
   { icon: 'devicon-git-plain', label: 'Git', category: 'devops' },
-  { icon: 'devicon-junit-plain', label: 'JUnit', category: 'devops' },
+  { icon: 'devicon-junit-plain', label: 'JUnit 5 / Mockito', category: 'devops' },
   { icon: 'devicon-pytest-plain', label: 'Pytest', category: 'devops' },
   { icon: 'devicon-swagger-plain', label: 'Swagger', category: 'devops' },
   { icon: 'devicon-postman-plain', label: 'Postman', category: 'devops' },
@@ -260,12 +262,13 @@ export const skillsData = [
 export const experienceData = [
   {
     id: 'observatorio',
-    period: 'Jul 2026 — atual',
+    period: 'Mai 2026 — atual',
     title: 'Líder Técnica & QA — Observatório da Mulher',
     org: 'Cidades Inteligentes · IFBA Irecê · Prefeitura de Irecê',
     points: [
+      'Lidero uma equipe de 3 desenvolvedores na plataforma que integra cerca de 5 instituições da rede municipal de proteção e substitui o fluxo histórico em papel por um sistema digital.',
       'Arquitetei o projeto do zero: monolito modular com fronteiras verificadas por ArchUnit, eventos de domínio, migrações Flyway e decisões registradas em ADRs.',
-      'Conduzo o time: code review dos PRs, criação e priorização de issues e validação de qualidade (QA) antes de cada entrega.',
+      'Estabeleci o fluxo de engenharia do time (GitFlow, pull requests e testes com JUnit 5 e Mockito) e conduzo code review, criação e priorização de issues e validação de qualidade (QA).',
       'Faço visitas técnicas aos clientes para levantar requisitos; redigi o Documento de Especificação de Requisitos (ERS), o diagrama de classes e os protótipos no Figma.',
       'Também desenvolvo: mais de 160 PRs entre back-end e front-end, incluindo autenticação com cookie HttpOnly, auditoria alinhada à LGPD e relatórios do CRAM gerados com IA com anonimização de dados sensíveis.',
     ],
